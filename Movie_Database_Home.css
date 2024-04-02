@@ -1,34 +1,79 @@
 /*This is the CSS for the homepage for the MovieDataBase*/
 
 body {
-    font-family: Tahoma,sans-serif;
-    text-align: center;
+    font-family: 'Verdana','sans-serif';
+    text-align: left;
     color: #f5f6f7;
-    font-size: 32px;
+    font-size: 16px;
     background-color: #1b1b32;
+}
+
+h1,h2
+{
+    font-size: 24px;
 }
 
 .card {
     background-color: #032541;
 }
-#movies {
+#movies , #tv_shows{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+    overflow-y: hidden;
 }
 
-.movie_item {
-    margin: 1rem;
+.movie_item, .tv_item {
+
+    flex: 0 0 auto;
+    margin-right: 10px;
+    white-space: nowrap;
+    /*margin: 1rem;
     text-align: center;
     color: #f5f6f7;
     font-size: 25px;
-    max-width: 500px;
+    max-width: 500px;*/
 }
 
 .title {
     padding-top: 16px;
+    text-align: center;
+
+    /*Truncate long titles*/
+    overflow:hidden;
+    white-space: nowrap;
+    width:500px;
+    text-overflow: ellipsis;
+
+
 }
 
 .movie_img_rounded {
     border-radius: 3rem;
 }
+
+
+.tv_image_rounded
+{
+    border-radius: 3rem;
+}
+
+
+/*Hide the horizontal scroll bars */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#movies::-webkit-scrollbar,
+#tv_shows::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#movies {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+#tv_shows {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
