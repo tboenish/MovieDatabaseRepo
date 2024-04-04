@@ -1,16 +1,18 @@
 //This is the JavaScript for my MovieDatabase project.
 
 
-const apiKey = '7dc7b711d0ebbc371bb088419fb03635';
+const apiKey = '7dc7b711d0ebbc371bb088419fb03635';//My API Key
 
 
 
 
-const apiUrl_trending_movies = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`;
-const apiURL_trending_tv = `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}`;
-const moviesContainer = document.getElementById("movies");
-const tv_container = document.getElementById("tv_shows");
+const apiUrl_trending_movies = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`;//API call for trending movies
+const apiURL_trending_tv = `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}`;//API call for trending TV shows
 
+const moviesContainer = document.getElementById("movies");//Get the HTML container for movies
+const tv_container = document.getElementById("tv_shows");//Get the HTML container for TV shows
+
+//Retreive the data for trending movies
 async function fetchMovies() {
     try {
         const response = await fetch(apiUrl_trending_movies);
@@ -25,6 +27,7 @@ async function fetchMovies() {
     }
 }
 
+//Retrieve the data for trending TV shows
 async function fetchTv() {
     try {
         const response = await fetch(apiURL_trending_tv);
@@ -40,6 +43,8 @@ async function fetchTv() {
     }
 }
 
+
+//Display trending movie data
 function createMovieCard(media) {
     const { title, name, backdrop_path } = media;
 
@@ -53,6 +58,8 @@ function createMovieCard(media) {
     return movieCard;
 }
 
+
+//Display trending TV data
 function create_TV_card(media)
 {
     const {title,name,backdrop_path} = media;
@@ -67,6 +74,7 @@ function create_TV_card(media)
 
     return TV_card;
 }
+
 
 fetchMovies();
 fetchTv();

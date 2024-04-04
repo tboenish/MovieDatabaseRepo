@@ -8,6 +8,29 @@ body {
     background-color: #1b1b32;
 }
 
+nav{
+    text-align: center;
+    font-family: 'Verdana', 'Geneva,' 'Tahoma', 'sans-serif';
+    font-size: 32px;
+    
+}
+
+a:link{
+    color:#f5f6f7;
+    text-decoration: none;
+
+
+
+}
+
+a:visited{
+    color:#f5f6f7;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(137, 13, 13);
+}
 h1,h2
 {
     font-size: 24px;
