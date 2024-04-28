@@ -46,7 +46,7 @@ h1,h2,h3
     overflow-y: hidden;
 }
 
-.movie_item, .tv_item, .actor_item {
+.movie_item, .tv_item,.actor_item{
 
     flex: 0 0 auto;
     margin-right: 10px;
@@ -56,6 +56,14 @@ h1,h2,h3
     color: #f5f6f7;
     font-size: 25px;
     max-width: 500px;*/
+}
+
+.actor_item img{
+    max-height:400px;
+    
+    margin-left: 120px;
+    margin-right: none;
+    
 }
 
 .title {
