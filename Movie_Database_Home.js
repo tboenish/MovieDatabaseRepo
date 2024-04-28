@@ -8,9 +8,11 @@ const apiKey = '7dc7b711d0ebbc371bb088419fb03635';//My API Key
 
 const apiUrl_trending_movies = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`;//API call for trending movies
 const apiURL_trending_tv = `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}`;//API call for trending TV shows
+const apiURL_trendingActors = `https://api.themoviedb.org/3/trending/person/day?api_key=${apiKey}`;//API call for trending actors
 
 const moviesContainer = document.getElementById("movies");//Get the HTML container for movies
 const tv_container = document.getElementById("tv_shows");//Get the HTML container for TV shows
+const actorContainer = document.getElementById("actors");//Get the HTML container for Actors
 
 //Retreive the data for trending movies
 async function fetchMovies() {
@@ -42,7 +44,23 @@ async function fetchTv() {
         console.error("Error retrieving data:",error);
     }
 }
+//Fetch data for trending actors
 
+async function fetchActor()
+{
+    try{
+        const response = await fetch(apiURL_trendingActors);
+        const data = await response.json();
+
+        data.results.forEach(media => {
+            const actorCard = createActorCard(media);
+            actorContainer.appendChild(actorCard);
+        });
+    } catch (error)
+    {
+        console.error("Error retreiving data:",error);
+    }
+}
 
 //Display trending movie data
 function createMovieCard(media) {
@@ -62,7 +80,7 @@ function createMovieCard(media) {
 //Display trending TV data
 function create_TV_card(media)
 {
-    const {title,name,backdrop_path} = media;
+    const {name,backdrop_path} = media;
 
     const TV_card = document.createElement("div");
     TV_card.classList.add("tv_item");
@@ -75,6 +93,23 @@ function create_TV_card(media)
     return TV_card;
 }
 
+//Display trending actors
+function createActorCard(media)
+{
+    const {name,profile_path} = media;
+    const actorCard = document.createElement("div");
+    actorCard.classList.add("actor_item");
+
+    actorCard.innerHTML = `
+    <img src="https://image.tmdb.org/t/p/w500/${profile_path}" class = "actorImageRounded">
+    <div class = "title">${name}</div>
+    `;
+
+    return actorCard;
+    
+}
+
 
 fetchMovies();
 fetchTv();
+fetchActor();
