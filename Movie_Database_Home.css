@@ -1,7 +1,7 @@
 /*This is the CSS for the homepage for the MovieDataBase*/
 
 /*format for body section */
-body {
+body,h1,h2,h3,h4 {
     font-family: 'Verdana','sans-serif';
     text-align: left;
     color: #f5f6f7;
@@ -40,14 +40,14 @@ h1,h2,h3
 .card {
     background-color: #032541;
 }
-#movies , #tv_shows, #actors{
+#movies , #tv_shows, #actors,#nowPlaying,#popularMovies,#topRatedMovies,#upcomingMovies,#airingToday,#airingWeek,#popularTV,#topRatedTV,#actors2{
     display: flex;
     flex-wrap: nowrap;
     overflow-x:auto;
     overflow-y: hidden;
 }
 
-.movie_item, .tv_item,.actor_item{
+.movie_item, .tv_item,.actor_item,.nowPlaying_item,.popularMovies_item,.topRatedMovies_item,.upcomingMovies_item,.airingToday_item,.airingWeek_item,.popularTV_item,.topRatedTV_item,.actors2_item{
 
     flex: 0 0 auto;
     margin-right: 10px;
@@ -59,7 +59,7 @@ h1,h2,h3
     max-width: 500px;*/
 }
 
-.actor_item img{
+.actor_item img,.actors2_item img{
     max-height:400px;
     
     margin-left: 120px;
@@ -80,7 +80,7 @@ h1,h2,h3
 
 }
 
-.movie_img_rounded,.tv_image_rounded,.actorImageRounded {
+.movie_img_rounded,.tv_image_rounded,.actorImageRounded,.nowPlayingImageRounded,.popularMoviesImageRounded,.topRatedMoviesImageRounded,.upcomingMoviesImageRounded,.airingTodayImageRounded,.airingWeekImageRounded,.popularTVImageRounded,.topRatedTVImageRounded,.actors2ImageRounded{
     border-radius: 3rem;
 }
 
@@ -91,12 +91,12 @@ h1,h2,h3
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 #movies::-webkit-scrollbar,
-#tv_shows::-webkit-scrollbar,#actors::-webkit-scrollbar {
+#tv_shows::-webkit-scrollbar,#actors::-webkit-scrollbar,#nowPlaying::-webkit-scrollbar,#popularMovies::-webkit-scrollbar,#topRatedMovies::-webkit-scrollbar,#upcomingMovies::-webkit-scrollbar,#airingToday::-webkit-scrollbar,#airingWeek::-webkit-scrollbar,#popularTV::-webkit-scrollbar,#topRatedTV::-webkit-scrollbar,#actors2::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-#movies,#tv_shows,#actors {
+#movies,#tv_shows,#actors,#nowPlaying,#popularMovies,#topRatedMovies,#upcomingMovies,#airingToday,#airingWeek,#popularTV,#topRatedTV,#actors2{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
